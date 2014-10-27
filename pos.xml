@@ -504,7 +504,8 @@
     </t>
 
     <t t-name="XmlReceipt">
-        <receipt align='center' width='40' value-thousands-separator='' >
+        <receipt align='center' width='40' value-thousands-separator=',' >
+<!--
             <t t-if='receipt.company.logo'>
                 <img t-att-src='receipt.company.logo' />
                 <br/>
@@ -513,7 +514,9 @@
                 <h1><t t-esc='receipt.company.name' /></h1>
                 <br/>
             </t>
+-->
             <div font='b'>
+<!--
                 <t t-if='receipt.shop.name'>
                     <div><t t-esc='receipt.shop.name' /></div>
                 </t>
@@ -534,6 +537,14 @@
                 </t>
                 <t t-if='receipt.header'>
                     <div><t t-esc='receipt.header' /></div>
+                </t>
+-->
+                <t t-if="widget.pos.config.name = 'HaRuNe店'">
+                    HaRuNeｵﾀﾞﾜﾗ<br />
+                    ﾔｷｶﾞｼﾔCHINRIU<br />
+                    Tel: 050-6860-4792<br />
+                    facebook.com/yakigashiyachinriu<br />
+                    <br />
                 </t>
                 <t t-if='receipt.cashier'>
                     <div>--------------------------------</div>
@@ -567,12 +578,12 @@
                                     <t t-esc='line.unit_name' /> 
                                 </t>
                                 x 
-                                <value value-decimals='2'>
+                                <value value-decimals='0'>
                                     <t t-esc='line.price' />
                                 </value>
                             </left>
                             <right>
-                                <value><t t-esc='line.price_display' /></value>
+                                <value value-decimals='0'><t t-esc='line.price_display' /></value>
                             </right>
                         </line>
                     </t>
@@ -598,43 +609,43 @@
             <line><right>--------</right></line>
             <line size='double-height'>
                 <left><pre>        TOTAL</pre></left>
-                <right><value><t t-esc='receipt.total_with_tax' /></value></right>
+                <right><value value-decimals='0'><t t-esc='receipt.total_with_tax' /></value></right>
             </line>
             <br/><br/>
 
-            <!-- Payment Lines -->
-
-            <t t-foreach='receipt.paymentlines' t-as='line'>
-                <line>
-                    <left><t t-esc='line.journal' /></left>
-                    <right><value><t t-esc='line.amount'/></value></right>
-                </line>
-            </t>
-            <br/> 
-
-            <line size='double-height'>
-                <left><pre>        CHANGE</pre></left>
-                <right><value><t t-esc='receipt.change' /></value></right>
-            </line>
-            <br/>
-            
             <!-- Extra Payment Info -->
 
             <t t-if='receipt.total_discount'>
                 <line>
                     <left>Discounts</left>
-                    <right><value><t t-esc='receipt.total_discount'/></value></right>
+                    <right><value value-decimals='0'><t t-esc='receipt.total_discount'/></value></right>
                 </line>
             </t>
             <t t-if='taxincluded'>
                 <t t-foreach='receipt.tax_details' t-as='tax'>
                     <line>
                         <left><t t-esc='tax.name' /></left>
-                        <right><value><t t-esc='tax.amount' /></value></right>
+                        <right><value value-decimals='0'><t t-esc='tax.amount' /></value></right>
                     </line>
                 </t>
             </t>
 
+            <!-- Payment Lines -->
+
+            <t t-foreach='receipt.paymentlines' t-as='line'>
+                <line>
+                    <left><t t-esc='line.journal' /></left>
+                    <right><value value-decimals='0'><t t-esc='line.amount'/></value></right>
+                </line>
+            </t>
+            <br/> 
+
+            <line size='double-height'>
+                <left><pre>        CHANGE</pre></left>
+                <right><value value-decimals='0'><t t-esc='receipt.change' /></value></right>
+            </line>
+            <br/>
+            
             <!-- Footer -->
             <t t-if='receipt.footer'>
                 <br/>
