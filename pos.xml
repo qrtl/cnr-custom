@@ -625,8 +625,8 @@
 <!--
                         <left><t t-esc='tax.name' /></left>
 -->
-                        <left><pre>        TAXES INCLUDED</pre></left>
-                        <right><value value-decimals='0'><t t-esc='tax.amount' /></value></right>
+                        <left>TAXES INCLUDED</pre></left>
+                        <right>(<value value-decimals='0'><t t-esc='tax.amount' /></value>)</right>
                     </line>
                 </t>
             </t>
