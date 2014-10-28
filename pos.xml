@@ -610,7 +610,6 @@
                 <left><pre>        TOTAL</pre></left>
                 <right><value value-decimals='0'><t t-esc='receipt.total_with_tax' /></value></right>
             </line>
-            <br/><br/>
 
             <!-- Extra Payment Info -->
 
@@ -623,12 +622,16 @@
             <t t-if='taxincluded'>
                 <t t-foreach='receipt.tax_details' t-as='tax'>
                     <line>
+<!--
                         <left><t t-esc='tax.name' /></left>
+-->
+                        <left><pre>        TAXES INCLUDED</pre></left>
                         <right><value value-decimals='0'><t t-esc='tax.amount' /></value></right>
                     </line>
                 </t>
             </t>
-
+            <br/><br/>
+            
             <!-- Payment Lines -->
 
             <t t-foreach='receipt.paymentlines' t-as='line'>
