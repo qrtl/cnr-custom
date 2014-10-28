@@ -540,8 +540,7 @@
                 </t>
 -->
                 <t t-if="widget.pos.config.name = 'HaRuNe店'">
-                    HaRuNeｵﾀﾞﾜﾗ<br />
-                    ﾔｷｶﾞｼﾔCHINRIU<br />
+                    ﾔｷｶﾞｼﾔCHINRIU  HaRuNeｵﾀﾞﾜﾗﾃﾝ<br />
                     Tel: 050-6860-4792<br />
                     facebook.com/yakigashiyachinriu<br />
                     <br />
