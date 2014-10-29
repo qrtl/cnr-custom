@@ -171,8 +171,10 @@ class pos_report(osv.osv_memory):
             'total_return':total_return,
             'total_return2':total_return2,
             'base_cash':read_dic.get('cash_register_balance_start') or 0,
-            'cash_increase':read_dic.get('cash_register_total_entry_encoding') or 0,
-            'cash_hand':read_dic.get('cash_register_balance_end') or 0,
+            #'cash_increase':read_dic.get('cash_register_total_entry_encoding') or 0,
+            'cash_increase':total_cash2 - total_virtual_currency2,
+            #'cash_hand':read_dic.get('cash_register_balance_end') or 0,
+            'cash_hand':(read_dic.get('cash_register_balance_start') or 0) + (total_cash2 - total_virtual_currency2),
             #'sequence':(read_dic.get('name') or '').replace('/','').replace('POS',''),
             'sequence':read_dic.get('name') or '',
         }
