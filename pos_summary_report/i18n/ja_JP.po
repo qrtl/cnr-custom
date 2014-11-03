@@ -1,0 +1,343 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_summary_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-03 11:33+0000\n"
+"PO-Revision-Date: 2014-11-03 11:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_summary_report
+#: view:pos.summary.report:pos_summary_report.pos_summary_report_query_form
+msgid "------------------------------------------"
+msgstr "------------------------------------------"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Amount"
+msgstr "金額"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Cash Received"
+msgstr "現金増減額"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Closing ID:"
+msgstr "精算回数:"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,create_uid:0
+msgid "Created by"
+msgstr "作成者"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,create_date:0
+msgid "Created on"
+msgstr "作成日"
+
+#. module: pos_summary_report
+#: selection:account.journal,summary_report_categ:0
+msgid "Credit"
+msgstr "クレジットカード"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Credit Card"
+msgstr "クレジットカード"
+
+#. module: pos_summary_report
+#: code:addons/pos_summary_report/pos_summary_report.py:294
+#: model:ir.actions.act_window,name:pos_summary_report.action_pos_summary_report
+#: model:ir.model,name:pos_summary_report.model_pos_summary_report
+#: model:ir.ui.menu,name:pos_summary_report.menu_pos_summary_report
+#: view:pos.summary.report:pos_summary_report.pos_summary_report_form
+#: view:pos.summary.report:pos_summary_report.pos_summary_report_query_form
+#, python-format
+msgid "Daily Shop Sales Report"
+msgstr "精算レシート"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Daily Summary Report"
+msgstr "精算レシート"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,date:0
+msgid "Date"
+msgstr "日付"
+
+#. module: pos_summary_report
+#: field:pos.category,deduction:0
+msgid "Deduction"
+msgstr "その他控除"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Delivery, etc."
+msgstr "その他控除"
+
+#. module: pos_summary_report
+#: selection:account.journal,summary_report_categ:0
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Electronic Cash"
+msgstr "電子マネー"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Ending Balance"
+msgstr "現金残高"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Gift Voucher"
+msgstr "商品券"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Gift Voucher Change"
+msgstr "商品券釣"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Gross Sales"
+msgstr "総売上"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_shopcash_amt:0
+#: field:pos.summary.report,sum_shopcash_cust:0
+msgid "HaRuNe店現金"
+msgstr "HaRuNe店現金"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,header:0
+msgid "Header"
+msgstr "ヘッダ"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Item"
+msgstr "項目"
+
+#. module: pos_summary_report
+#: model:ir.model,name:pos_summary_report.model_account_journal
+msgid "Journal"
+msgstr "仕訳帳"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,write_uid:0
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,write_date:0
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: pos_summary_report
+#: help:pos.category,deduction:0
+msgid "Makes the POS sales counted as deduction in Daily Shop Sales Summary Report."
+msgstr "精算レシートにて、関連製品のPOS売上を「その他控除」に分類"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Net Sales"
+msgstr "純売上"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "No. of Customers"
+msgstr "顧客数"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Opening Balance"
+msgstr "釣銭金額"
+
+#. module: pos_summary_report
+#: model:ir.actions.report.xml,name:pos_summary_report.action_report_pos_summary
+msgid "POS Summary Report"
+msgstr "精算レシート"
+
+#. module: pos_summary_report
+#: view:pos.summary.report:pos_summary_report.pos_summary_report_query_form
+msgid "Print to PDF"
+msgstr "PDFに出力"
+
+#. module: pos_summary_report
+#: model:ir.model,name:pos_summary_report.model_pos_category
+msgid "Public Category"
+msgstr "Public Category"
+
+#. module: pos_summary_report
+#: view:pos.summary.report:pos_summary_report.pos_summary_report_form
+msgid "Query"
+msgstr "クエリ"
+
+#. module: pos_summary_report
+#: selection:account.journal,summary_report_categ:0
+msgid "Receivable"
+msgstr "売掛金"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Returns"
+msgstr "取消・返品"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,shop:0
+msgid "Shop"
+msgstr "店舗"
+
+#. module: pos_summary_report
+#: selection:account.journal,summary_report_categ:0
+msgid "Shop Cash"
+msgstr "店舗現金"
+
+#. module: pos_summary_report
+#: code:addons/pos_summary_report/pos_summary_report.py:205
+#, python-format
+msgid "Shop error!"
+msgstr "店舗エラー"
+
+#. module: pos_summary_report
+#: field:account.journal,summary_report_categ:0
+msgid "Summary Report Category"
+msgstr "Summary Report Category"
+
+#. module: pos_summary_report
+#: code:addons/pos_summary_report/pos_summary_report.py:205
+#, python-format
+msgid "There is no shop available for you!"
+msgstr "該当する店舗がありません"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Total Cash"
+msgstr "現金"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "Urikake"
+msgstr "売掛金"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,partner_id:0
+msgid "User"
+msgstr "ユーザ"
+
+#. module: pos_summary_report
+#: view:website:pos_summary_report.report_possummary_document
+msgid "VAT"
+msgstr "消費税"
+
+#. module: pos_summary_report
+#: selection:account.journal,summary_report_categ:0
+msgid "Voucher"
+msgstr "商品券"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,name:0
+msgid "name"
+msgstr "name"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,other_deduction_amt:0
+#: field:pos.summary.report,other_deduction_cust:0
+msgid "その他控除"
+msgstr "その他控除"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_return_amt:0
+#: field:pos.summary.report,sum_return_cust:0
+msgid "取消・返品"
+msgstr "取消・返品"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_voucher_amt:0
+#: field:pos.summary.report,sum_voucher_cust:0
+msgid "商品券"
+msgstr "商品券"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_voucher_change_amt:0
+#: field:pos.summary.report,sum_voucher_change_cust:0
+msgid "商品券釣"
+msgstr "商品券釣"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_receivable_amt:0
+#: field:pos.summary.report,sum_receivable_cust:0
+msgid "売掛金"
+msgstr "売掛金"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,vat_amt:0
+#: field:pos.summary.report,vat_cust:0
+msgid "消費税"
+msgstr "消費税"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,cash_increase:0
+msgid "現金増減額"
+msgstr "現金増減額"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,cash_hand:0
+msgid "現金残高"
+msgstr "現金残高"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sequence:0
+msgid "精算回数"
+msgstr "精算回数"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,net_sales_amt:0
+#: field:pos.summary.report,net_sales_cust:0
+msgid "純売上"
+msgstr "純売上"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,gross_sales_amt:0
+#: field:pos.summary.report,gross_sales_cust:0
+msgid "総売上"
+msgstr "総売上"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,base_cash:0
+msgid "釣銭金額"
+msgstr "釣銭金額"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_ecash_amt:0
+#: field:pos.summary.report,sum_ecash_cust:0
+msgid "電子ﾏﾈｰ"
+msgstr "電子ﾏﾈｰ"
+
+#. module: pos_summary_report
+#: view:pos.summary.report:pos_summary_report.pos_summary_report_query_form
+msgid "顧客数"
+msgstr "顧客数"
+
+#. module: pos_summary_report
+#: field:pos.summary.report,sum_credit_amt:0
+#: field:pos.summary.report,sum_credit_cust:0
+msgid "ｸﾚｼﾞｯﾄ(Square)"
+msgstr "ｸﾚｼﾞｯﾄ(Square)"
+
+
