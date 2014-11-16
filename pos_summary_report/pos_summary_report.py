@@ -165,6 +165,7 @@ class pos_summary_report(osv.osv_memory):
             "where pol.order_id = po.id "
             "and po.location_id = %s "
             "and pol.price_subtotal_incl < 0 "
+            "and pol.qty < 0 "  # added this condition to ignore discount items (qty is positive for discount items)
             "and po.date_order >= %s "
             "and po.date_order <= %s", tuple(params)
             )
