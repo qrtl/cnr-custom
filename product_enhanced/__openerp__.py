@@ -34,7 +34,7 @@
 * Add fields to product master
     """,
     'data': [
-        'product.xml',
+        'product_view.xml',
     ],
     
     'installable': True,
