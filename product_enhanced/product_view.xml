@@ -17,6 +17,7 @@
                             <field name="shipping_method"/>
                             <field name="display_stock"/>
                             <field name="days_until_ship"/>
+                            <field name="purch_lead_time"/>
                             <field name="ingredients"/>
                             <field name="salt_percent"/>
                             <field name="alcohol_percent"/>

@@ -31,6 +31,7 @@ class product_template(osv.osv):
         'net_weight': fields.float('Net Weight'),
         'gross_weight': fields.float('Gross Weight'),
         'days_until_ship': fields.integer('Days until Shipping'),
+        'purch_lead_time': fields.integer('Purchasing Lead Time'),
         'ship_weight': fields.float('Shipping Weight'),
         'ship_height': fields.float('Shipping Height'),
         'ship_width': fields.float('Shipping Width'),
