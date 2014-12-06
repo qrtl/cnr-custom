@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 07:58+0000\n"
-"PO-Revision-Date: 2014-12-06 07:58+0000\n"
+"POT-Creation-Date: 2014-12-06 07:57+0000\n"
+"PO-Revision-Date: 2014-12-06 07:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,127 +18,127 @@ msgstr ""
 #. module: product_enhanced
 #: field:product.template,alcohol_percent:0
 msgid "Alcohol %"
-msgstr "アルコール%"
+msgstr ""
 
 #. module: product_enhanced
 #: view:product.template:product_enhanced.product_template_form_view_z1
 msgid "Allergens..."
-msgstr "アレルギー..."
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.model,name:product_enhanced.model_product_allergy
 #: field:product.template,allergy_ids:0
 msgid "Allergy"
-msgstr "アレルギー"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,buyer:0
 msgid "Buyer"
-msgstr "バイヤー"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,buyer_commission:0
 msgid "Buyer Commission"
-msgstr "バイヤーコミッション"
+msgstr ""
 
 #. module: product_enhanced
 #: selection:product.template,shipping_method:0
 msgid "Cool"
-msgstr "クール"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,create_uid:0
 #: field:product.designer,create_uid:0
 #: field:product.packaging.unit,create_uid:0
 msgid "Created by"
-msgstr "作成者"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,create_date:0
 #: field:product.designer,create_date:0
 #: field:product.packaging.unit,create_date:0
 msgid "Created on"
-msgstr "作成日"
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.model,name:product_enhanced.model_product_designer
 #: field:product.template,designer_ids:0
 msgid "Designer"
-msgstr "デザイナー"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.designer,designer_ids:0
 msgid "Designers"
-msgstr "デザイナー"
+msgstr ""
 
 #. module: product_enhanced
 #: view:product.template:product_enhanced.product_template_form_view_z1
 msgid "Dimensions"
-msgstr "寸法"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,display_stock:0
 msgid "Display Stock"
-msgstr "表示在庫"
+msgstr ""
 
 #. module: product_enhanced
 #: selection:product.template,shipping_method:0
 msgid "Frozen"
-msgstr "冷凍"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,name_furigana:0
 msgid "Furigana"
-msgstr "ﾌﾘｶﾞﾅ"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,id:0
 #: field:product.designer,id:0
 #: field:product.packaging.unit,id:0
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,write_uid:0
 #: field:product.designer,write_uid:0
 #: field:product.packaging.unit,write_uid:0
 msgid "Last Updated by"
-msgstr "最終更新者"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,write_date:0
 #: field:product.designer,write_date:0
 #: field:product.packaging.unit,write_date:0
 msgid "Last Updated on"
-msgstr "最終更新日"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,manufacture_country:0
 msgid "Manufacture Country"
-msgstr "生産国"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,ingredients:0
 msgid "Materials/Ingredients"
-msgstr "原材料"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,name:0
 #: field:product.designer,name:0
 #: field:product.packaging.unit,name:0
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,packaging:0
 msgid "Packaging"
-msgstr "容器"
+msgstr ""
 
 #. module: product_enhanced
 #: view:product.product:product_enhanced.product_search_form_view_z1
 #: view:product.template:product_enhanced.product_template_search_view_z1
 msgid "Product"
-msgstr "製品"
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.actions.act_window,name:product_enhanced.allergy_action
@@ -146,7 +146,7 @@ msgstr "製品"
 #: view:product.allergy:product_enhanced.product_allergy_list_view
 #: view:product.allergy:product_enhanced.product_allergy_view
 msgid "Product Allergy"
-msgstr "アレルギー"
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.actions.act_window,name:product_enhanced.designer_action
@@ -154,7 +154,7 @@ msgstr "アレルギー"
 #: view:product.designer:product_enhanced.product_designer_list_view
 #: view:product.designer:product_enhanced.product_designer_view
 msgid "Product Designer"
-msgstr "デザイナー"
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.actions.act_window,name:product_enhanced.packaging_unit_action
@@ -162,57 +162,57 @@ msgstr "デザイナー"
 #: view:product.packaging.unit:product_enhanced.product_packaging_unit_list_view
 #: view:product.packaging.unit:product_enhanced.product_packaging_unit_view
 msgid "Product Packaging"
-msgstr "製品容器"
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.model,name:product_enhanced.model_product_packaging_unit
 msgid "Product Packaging Unit"
-msgstr "製品容器"
+msgstr ""
 
 #. module: product_enhanced
 #: model:ir.model,name:product_enhanced.model_product_template
 msgid "Product Template"
-msgstr "製品テンプレート"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.allergy,product_ids:0
 msgid "Products"
-msgstr "製品"
+msgstr ""
 
 #. module: product_enhanced
 #: selection:product.template,shipping_method:0
 msgid "Regular"
-msgstr "普通"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,salt_percent:0
 msgid "Salt %"
-msgstr "塩分%"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,ship_height:0
 msgid "Shipping Height"
-msgstr "発送高さ"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,ship_length:0
 msgid "Shipping Length"
-msgstr "発送長さ"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,shipping_method:0
 msgid "Shipping Method"
-msgstr "発送方法"
+msgstr ""
 
 #. module: product_enhanced
 #: field:product.template,ship_width:0
 msgid "Shipping Width"
-msgstr "発送深さ"
+msgstr ""
 
 #. module: product_enhanced
 #: sql_constraint:product.allergy:0
 #: sql_constraint:product.designer:0
 #: sql_constraint:product.packaging.unit:0
 msgid "The name must be unique."
-msgstr "同じ名称のレコードは複数登録できません"
+msgstr ""
 
