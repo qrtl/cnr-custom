@@ -26,7 +26,6 @@ class product_template(osv.osv):
     _inherit = "product.template"
     _columns = {
         'name_furigana': fields.char('Furigana', select=True),
-#        'packaging': fields.selection([('barrel','Barrel'),('circular','Circular Box'),('cup','Cup'),('box','Box'),('pack','Pack')], 'Packaging'),
         'packaging': fields.many2one('product.packaging.unit', 'Packaging'),
         'shipping_method': fields.selection([('regular','Regular'),('cool','Cool'),('frozen','Frozen')], 'Shipping Method'),
         'display_stock': fields.integer('Display Stock'),
@@ -71,4 +70,3 @@ class product_designer(osv.osv):
     }
     _sql_constraints = [
         ('name_uniq', 'unique (name)','The name must be unique.')]
-

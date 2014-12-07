@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
                 <field name="sale_ok" position="before">
-                    <field name="name_furigana"/>
+                    <field name="name_furigana" placeholder="ﾌﾘｶﾞﾅ..."/>
                 </field>
                 <xpath expr="//field[@name='description']" position="before">
                     <group colspan="4">

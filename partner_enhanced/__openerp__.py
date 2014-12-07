@@ -20,23 +20,21 @@
 ##############################################################################
 
 {
-    'name': 'Product Enhanced',
+    'name': 'Partner Enhanced',
     'version': '1.0',
     'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
     'website': 'http://www.openerp-asia.net',
     'category': 'Sales',
-    'sequence': 35,
+    'sequence': 40,
     
     'depends': [
-        "sale",
-        "stock",
+        "base",
     ],
     'description': """
-* Adds fields to product master
-* Adds maintenance screens for Packaging, Allergy and Designer
+* Adds fields to partner master
     """,
     'data': [
-        'product_view.xml',
+        'res_partner_view.xml',
     ],
     'installable': True,
    
