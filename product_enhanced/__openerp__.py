@@ -25,7 +25,7 @@
     'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
     'website': 'http://www.openerp-asia.net',
     'category': 'Sales',
-    'sequence': 35,
+#    'sequence': 35,
     
     'depends': [
         "sale",
@@ -36,6 +36,7 @@
 * Adds maintenance screens for Packaging, Allergy and Designer
     """,
     'data': [
+        'security/ir.model.access.csv',
         'product_view.xml',
     ],
     'installable': True,
