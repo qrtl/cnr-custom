@@ -9,19 +9,22 @@
         -->
 
 	<!-- Payment Term -->
-	    <record id="view_monthly_billing_form" model="ir.ui.view">
-            <field name="name">view.monthly.billing.form</field>
+	    <record id="view_payment_term_form_z1" model="ir.ui.view">
+            <field name="name">view.payment.term.form.z1</field>
             <field name="model">account.payment.term</field>
-            <field name="view_type">form</field>
             <field name="inherit_id" ref="account.view_payment_term_form"/>
             <field name="arch" type="xml">
                 <field name="note" position="after">
-                <separator string="Monthly Billing"/>
-                <!-- label string="Monthly Billing"/ -->
-                <group col="4">
-                    <field name="monthly_closing"/>
-                    <field name="closing_date"/>
-                </group>
+                    <separator string="Monthly Cutoff"/>
+                    <group>
+                        <group>
+                            <field name="monthly_cutoff"/>
+                        </group>
+                        <group>
+                            <field name="month_end_cutoff"/>
+                            <field name="cutoff_date"/>
+                        </group>
+                    </group>
                 </field>
             </field>
         </record>
@@ -29,9 +32,6 @@
 	    <record id="view_payment_term_line_form_z1" model="ir.ui.view">
             <field name="name">view.payment.term.line.form.z1</field>
             <field name="model">account.payment.term.line</field>
-<!-- 
-            <field name="view_type">form</field>
- -->
             <field name="inherit_id" ref="account.view_payment_term_line_form"/>
             <field name="arch" type="xml">
                 <field name="days2" position="after">

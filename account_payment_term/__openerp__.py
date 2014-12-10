@@ -21,18 +21,18 @@
 ##############################################################################
 
 {
-    'name': 'Monthly Billing',
+    'name': 'Payment Term Enhanced',
     'version': '1.0.0',
     'category': 'Tools',
     'author': 'hiro TAKADA',
-    'summary': 'Add Monthly Billing',
+    'summary': 'Adds an option of better handling cutoff date and proposal of due date',
     'description': """
-    - Add Closing Date field to Payment Term
+* Adds Cutoff Date field in Payment Term
+* Handles month-end date designation for both Cutoff Date and Due Date
     """,
     'depends': ["account"], 
     'data': [
-        'account_monthly_billing.xml',
-#        'tg_partner_view.xml',
+        'account_payment_term.xml',
     ],
     'installable': True,
     'application': False,

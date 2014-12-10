@@ -34,19 +34,16 @@ from openerp.osv import fields, osv
 # from openerp.osv import expression
 from openerp.tools.translate import _
 # from openerp.tools.float_utils import float_round as round
+import calendar
 
 _logger = logging.getLogger(__name__)
 
 class view_monthly_billing_form(osv.osv):
     _inherit = 'account.payment.term'
     _columns = {
-#        'date_valid': fields.boolean('Date Valid'),
-        'monthly_closing': fields.boolean('Monthly Closing'),
-        'closing_date': fields.integer('Closing Date'),
-        }
-    _defaults = {
-#        'closing_date': 31,
-#        'date_valid': False,
+        'monthly_cutoff': fields.boolean('Monthly Cutoff'),
+        'month_end_cutoff': fields.boolean('Cutoff at Month-End'),
+        'cutoff_date': fields.integer('Cutoff Date'),
         }
 
     def compute(self, cr, uid, id, value, date_ref=False, context=None):
@@ -65,7 +62,7 @@ class view_monthly_billing_form(osv.osv):
             elif line.value == 'balance':
                 amt = round(amount, prec)
             if amt:
-                if not pt.monthly_closing:
+                if not pt.monthly_cutoff:
                     next_date = (datetime.strptime(date_ref, '%Y-%m-%d') + relativedelta(days=line.days))
                     if line.days2 < 0:
                         next_first_date = next_date + relativedelta(day=1,months=1) #Getting 1st of next month
@@ -73,16 +70,23 @@ class view_monthly_billing_form(osv.osv):
                     if line.days2 > 0:
                         next_date += relativedelta(day=line.days2, months=1)
                 # additional code is here
-                #if pt.monthly_closing:
                 else:
-                    #next_day = line.days
-                    #next_day = line.date
-                    months_to_add = line.months_added
                     ref_date = datetime.strptime(date_ref, '%Y-%m-%d')
-                    if ref_date.day > pt.closing_date:
-                        months_to_add += 1
-                    next_date = ref_date + relativedelta(day=line.date, months=months_to_add)
+
+                    # identify number of months to add 
+                    months_to_add = line.months_added
+                    if not pt.month_end_cutoff:
+                        if ref_date.day > pt.cutoff_date:
+                            months_to_add += 1
+                    # identify date of the month
+                    if line.month_end_pay:
+                        date = calendar.monthrange(ref_date.year,ref_date.month)[1]
+                    else:
+                        date = line.date
+
+                    next_date = ref_date + relativedelta(day=date, months=months_to_add)
                 # up to here
+
                 result.append( (next_date.strftime('%Y-%m-%d'), amt) )
                 amount -= amt
 
@@ -94,16 +98,9 @@ class view_monthly_billing_form(osv.osv):
 
 
 class account_payment_term_line(osv.osv):
-#    _name = 'account.payment.term'
     _inherit = 'account.payment.term.line'
     _columns = {
         'months_added': fields.integer('Months to Add'),
         'month_end_pay': fields.boolean('Payment at Month End'),
         'date': fields.integer('Date of the Month'),
         }
-    _defaults = {
-#        'closing_date': 31,
-#        'date_valid': False,
-        }
-
-

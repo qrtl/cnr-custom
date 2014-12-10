@@ -20,5 +20,5 @@
 #
 ##############################################################################
 
-import account_monthly_billing
-import tg_partner_firstname
+import account_payment_term
+
