@@ -28,7 +28,7 @@ class res_partner(osv.osv):
         'name_furigana': fields.char('Furigana', select=True),
         'partner_number': fields.char('Partner Number'),
         'birthday': fields.date('Birthday'),
-        'preferred_order_method': fields.selection([('fax','FAX'),('email','Email')], 'Preferred Order Method', required=True),
+        'preferred_order_method': fields.selection([('fax','FAX'),('email','Email'),('online','Online')], 'Preferred Order Method', required=True),
         'free_ship_from': fields.float('Free Shipping From'),
         'terms': fields.float('Terms'),
         'bank_fees': fields.selection([('customer','Paid by Customer'),('us','Paid by Us'),('both','Paid by Both Parties')], 'Bank Fees'),

@@ -51,6 +51,11 @@ msgid "Furigana..."
 msgstr "ﾌﾘｶﾞﾅ..."
 
 #. module: partner_enhanced
+#: selection:res.partner,preferred_order_method:0
+msgid "Online"
+msgstr "オンライン"
+
+#. module: partner_enhanced
 #: selection:res.partner,bank_fees:0
 msgid "Paid by Both Parties"
 msgstr "両者負担"
