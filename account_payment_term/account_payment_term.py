@@ -100,7 +100,8 @@ class view_monthly_billing_form(osv.osv):
 class account_payment_term_line(osv.osv):
     _inherit = 'account.payment.term.line'
     _columns = {
+        'monthly_cutoff': fields.related('payment_id', 'monthly_cutoff', type='boolean', string='Monthly Cutoff'),
         'months_added': fields.integer('Months to Add'),
         'month_end_pay': fields.boolean('Payment at Month End'),
-        'date': fields.integer('Date of the Month'),
+        'date': fields.integer('Payment Date'),
         }
