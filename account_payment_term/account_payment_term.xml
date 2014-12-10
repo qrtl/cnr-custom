@@ -3,12 +3,12 @@
     <data>
 
         <!--
-          "Monthly Billing" module for OpenERP
+          "Payment Term Enhanced" module for Odoo
           The licence is in the file __openerp__.py
           @author hiro TAKADA <hiro@thdo.biz>
         -->
 
-	<!-- Payment Term -->
+        <!-- Payment Term -->
 	    <record id="view_payment_term_form_z1" model="ir.ui.view">
             <field name="name">view.payment.term.form.z1</field>
             <field name="model">account.payment.term</field>
@@ -21,8 +21,8 @@
                             <field name="monthly_cutoff"/>
                         </group>
                         <group>
-                            <field name="month_end_cutoff" attrs="{'invisible': [('monthly_cutoff', '!=', True)]}"/>
-                            <field name="cutoff_date" attrs="{'invisible': ['|',('monthly_cutoff', '!=', True),('month_end_cutoff', '=', True)]}"/>
+                            <field name="month_end_cutoff" attrs="{'invisible':[('monthly_cutoff','!=',True)]}"/>
+                            <field name="cutoff_date" attrs="{'invisible':['|',('monthly_cutoff','!=',True),('month_end_cutoff','=',True)],'required':[('month_end_cutoff','!=',True)]}"/>
                         </group>
                     </group>
                 </field>
@@ -37,12 +37,12 @@
                 <field name="days" position="replace"/>
                 <field name="days2" position="replace"/>
                 <field name="value_amount" position="after">
-                    <field name="days" attrs="{'invisible': [('monthly_cutoff', '=', True)]}"/>
-                    <field name="days2" attrs="{'invisible': [('monthly_cutoff', '=', True)]}"/>
+                    <field name="days" attrs="{'invisible':[('monthly_cutoff','=',True)]}"/>
+                    <field name="days2" attrs="{'invisible':[('monthly_cutoff','=',True)]}"/>
                     <field name="monthly_cutoff" invisible="1"/>
-                    <field name="months_added" attrs="{'invisible': [('monthly_cutoff', '!=', True)]}"/>
-                    <field name="month_end_pay" attrs="{'invisible': [('monthly_cutoff', '!=', True)]}"/>
-                    <field name="date" attrs="{'invisible': ['|',('monthly_cutoff', '!=', True),('month_end_pay', '=', True)]}"/>
+                    <field name="months_added" attrs="{'invisible':[('monthly_cutoff','!=',True)]}"/>
+                    <field name="month_end_pay" attrs="{'invisible':[('monthly_cutoff','!=',True)]}"/>
+                    <field name="payment_date" attrs="{'invisible':['|',('monthly_cutoff','!=',True),('month_end_pay','=',True)]}"/>
                 </field>
             </field>
         </record>
@@ -55,12 +55,18 @@
                 <field name="days" position="replace"/>
                 <field name="days2" position="replace"/>
                 <group string="Due Date Computation" position="inside">
-                    <field name="days" attrs="{'invisible': [('monthly_cutoff', '=', True)]}"/>
-                    <field name="days2" attrs="{'invisible': [('monthly_cutoff', '=', True)]}"/>
+                    <field name="days" attrs="{'invisible':[('monthly_cutoff','=',True)]}"/>
+                    <field name="days2" attrs="{'invisible':[('monthly_cutoff','=',True)]}"/>
                     <field name="monthly_cutoff" invisible="1"/>
-                    <field name="months_added" attrs="{'invisible': [('monthly_cutoff', '!=', True)]}"/>
-                    <field name="month_end_pay" attrs="{'invisible': [('monthly_cutoff', '!=', True)]}"/>
-                    <field name="date" attrs="{'invisible': ['|',('monthly_cutoff', '!=', True),('month_end_pay', '=', True)]}"/>
+ 
+                    <field name="months_added" attrs="{'invisible':[('monthly_cutoff','!=',True)],'required':[('monthly_cutoff','=',True)]}"/>
+                    <field name="month_end_pay" attrs="{'invisible':[('monthly_cutoff','!=',True)]}"/>
+                    <field name="payment_date" attrs="{'invisible':['|',('monthly_cutoff','!=',True),('month_end_pay','=',True)],'required':[('month_end_pay','!=',True)]}"/>
+<!--
+                    <field name="months_added" attrs="{'required':[('monthly_cutoff','=',True)]}"/>
+                    <field name="month_end_pay"/>
+                    <field name="payment_date" attrs="{'invisible':[('month_end_pay','=',True)],'required':[('month_end_pay','!=',True)]}"/>
+ -->
                 </group>
             </field>
         </record>

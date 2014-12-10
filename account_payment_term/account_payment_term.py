@@ -23,28 +23,28 @@
 import logging
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-# from operator import itemgetter
-# import time
 from types import MethodType
 
 import openerp
 from openerp import netsvc, tools, pooler
-# from openerp import SUPERUSER_ID, api
 from openerp.osv import fields, osv
-# from openerp.osv import expression
-from openerp.tools.translate import _
-# from openerp.tools.float_utils import float_round as round
 import calendar
+from openerp.tools.translate import _
 
 _logger = logging.getLogger(__name__)
 
-class view_monthly_billing_form(osv.osv):
+#class view_monthly_billing_form(osv.osv):
+class account_payment_term(osv.osv):
     _inherit = 'account.payment.term'
     _columns = {
         'monthly_cutoff': fields.boolean('Monthly Cutoff'),
         'month_end_cutoff': fields.boolean('Cutoff at Month-End'),
         'cutoff_date': fields.integer('Cutoff Date'),
         }
+    _defaults = {
+        'monthly_cutoff': True,
+        'cutoff_date': 1,
+    }
 
     def compute(self, cr, uid, id, value, date_ref=False, context=None):
         if not date_ref:
@@ -82,7 +82,7 @@ class view_monthly_billing_form(osv.osv):
                     if line.month_end_pay:
                         date = calendar.monthrange(ref_date.year,ref_date.month)[1]
                     else:
-                        date = line.date
+                        date = line.payment_date
 
                     next_date = ref_date + relativedelta(day=date, months=months_to_add)
                 # up to here
@@ -96,12 +96,57 @@ class view_monthly_billing_form(osv.osv):
             result.append( (time.strftime('%Y-%m-%d'), dist) )
         return result
 
+    def _check_cutoff_date(self, cr, uid, ids, context=None):
+        obj = self.browse(cr, uid, ids[0], context=context)
+        if obj.monthly_cutoff and not obj.month_end_cutoff and ( obj.cutoff_date < 1 or obj.cutoff_date > 30):
+            return False
+        return True
+
+    _constraints = [
+        (_check_cutoff_date, 'Cutoff Date must be in the range between 1 and 30.', ['cutoff_date']),
+    ]
+
 
 class account_payment_term_line(osv.osv):
     _inherit = 'account.payment.term.line'
+
+#    def _is_monthly_cutoff(self, cr, uid, ids, context=None):
+#        pt_line_ids = []
+#        obj = self.browse(cr, uid, ids[0], context=context)
+#        pt_line_ids += self.pool.get('account.payment.term.line').search(cr, uid, [('payment_id', '=', obj.id)], context=context)
+#        return pt_line_ids   
+    
     _columns = {
         'monthly_cutoff': fields.related('payment_id', 'monthly_cutoff', type='boolean', string='Monthly Cutoff'),
+#        'monthly_cutoff': fields.related('payment_id', 'monthly_cutoff', type='boolean', string='Monthly Cutoff', 
+#                                         store={
+#                                                'account.payment.term': (_is_monthly_cutoff, ['monthly_cutoff'], 10),
+#                                                }),
+
         'months_added': fields.integer('Months to Add'),
         'month_end_pay': fields.boolean('Payment at Month End'),
-        'date': fields.integer('Payment Date'),
+        'payment_date': fields.integer('Payment Date'),
         }
+
+#    def _get_monthly_cutoff(self, cr, uid, ids, context=None):
+#        obj = self.browse(cr, uid, ids[0], context=context)
+#        if obj.monthly_cutoff:
+#            return True
+#        return False
+    
+    _defaults = {
+        #'monthly_cutoff': True,
+#        'monthly_cutoff': _get_monthly_cutoff,
+        'month_added': 1,
+        'payment_date': 1,
+    }
+
+    def _check_payment_date(self, cr, uid, ids, context=None):
+        obj = self.browse(cr, uid, ids[0], context=context)
+        if obj.monthly_cutoff and not obj.month_end_pay and ( obj.payment_date < 1 or obj.payment_date > 30):
+            return False
+        return True
+
+    _constraints = [
+        (_check_payment_date, 'Payment Date must be in the range between 1 and 30.', ['payment_date']),
+    ]
