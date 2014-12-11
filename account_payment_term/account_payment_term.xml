@@ -26,6 +26,10 @@
                         </group>
                     </group>
                 </field>
+                <field name="line_ids" position="replace">
+                    <!-- pass monthly_cutoff to child lines, or the line does not recognize the value until it is saved -->
+                    <field name="line_ids" context="{'monthly_cutoff': monthly_cutoff}"/>
+                </field>
             </field>
         </record>
 
@@ -58,15 +62,9 @@
                     <field name="days" attrs="{'invisible':[('monthly_cutoff','=',True)]}"/>
                     <field name="days2" attrs="{'invisible':[('monthly_cutoff','=',True)]}"/>
                     <field name="monthly_cutoff" invisible="1"/>
- 
                     <field name="months_added" attrs="{'invisible':[('monthly_cutoff','!=',True)],'required':[('monthly_cutoff','=',True)]}"/>
                     <field name="month_end_pay" attrs="{'invisible':[('monthly_cutoff','!=',True)]}"/>
                     <field name="payment_date" attrs="{'invisible':['|',('monthly_cutoff','!=',True),('month_end_pay','=',True)],'required':[('month_end_pay','!=',True)]}"/>
-<!--
-                    <field name="months_added" attrs="{'required':[('monthly_cutoff','=',True)]}"/>
-                    <field name="month_end_pay"/>
-                    <field name="payment_date" attrs="{'invisible':[('month_end_pay','=',True)],'required':[('month_end_pay','!=',True)]}"/>
- -->
                 </group>
             </field>
         </record>

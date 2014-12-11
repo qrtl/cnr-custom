@@ -109,34 +109,20 @@ class account_payment_term(osv.osv):
 
 class account_payment_term_line(osv.osv):
     _inherit = 'account.payment.term.line'
-
-#    def _is_monthly_cutoff(self, cr, uid, ids, context=None):
-#        pt_line_ids = []
-#        obj = self.browse(cr, uid, ids[0], context=context)
-#        pt_line_ids += self.pool.get('account.payment.term.line').search(cr, uid, [('payment_id', '=', obj.id)], context=context)
-#        return pt_line_ids   
-    
     _columns = {
         'monthly_cutoff': fields.related('payment_id', 'monthly_cutoff', type='boolean', string='Monthly Cutoff'),
-#        'monthly_cutoff': fields.related('payment_id', 'monthly_cutoff', type='boolean', string='Monthly Cutoff', 
-#                                         store={
-#                                                'account.payment.term': (_is_monthly_cutoff, ['monthly_cutoff'], 10),
-#                                                }),
-
         'months_added': fields.integer('Months to Add'),
         'month_end_pay': fields.boolean('Payment at Month End'),
         'payment_date': fields.integer('Payment Date'),
         }
 
-#    def _get_monthly_cutoff(self, cr, uid, ids, context=None):
-#        obj = self.browse(cr, uid, ids[0], context=context)
-#        if obj.monthly_cutoff:
-#            return True
-#        return False
+    def _get_monthly_cutoff(self, cr, uid, ids, context=None):
+        if ids['monthly_cutoff']:
+            return True
+        return False
     
     _defaults = {
-        #'monthly_cutoff': True,
-#        'monthly_cutoff': _get_monthly_cutoff,
+        'monthly_cutoff': _get_monthly_cutoff,
         'month_added': 1,
         'payment_date': 1,
     }
