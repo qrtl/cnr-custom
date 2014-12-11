@@ -23,7 +23,7 @@
 import logging
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from types import MethodType
+#from types import MethodType
 
 import openerp
 from openerp import netsvc, tools, pooler
@@ -116,6 +116,8 @@ class account_payment_term_line(osv.osv):
         'payment_date': fields.integer('Payment Date'),
         }
 
+    # 'monthly_cutoff' value is passed via context of the parent view
+    # there is probably a better way to keep the line 'monthly_cutoff' in sync with the parent (future improvement)
     def _get_monthly_cutoff(self, cr, uid, ids, context=None):
         if ids['monthly_cutoff']:
             return True
