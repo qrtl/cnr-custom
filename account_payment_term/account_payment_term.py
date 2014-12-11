@@ -42,7 +42,7 @@ class account_payment_term(osv.osv):
         'cutoff_date': fields.integer('Cutoff Date'),
         }
     _defaults = {
-        'monthly_cutoff': True,
+#        'monthly_cutoff': True,
         'cutoff_date': 1,
     }
 
