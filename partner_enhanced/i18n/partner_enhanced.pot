@@ -41,6 +41,11 @@ msgid "Free Shipping From"
 msgstr ""
 
 #. module: partner_enhanced
+#: field:purchase.order,free_ship_from:0
+msgid "Free Shipping From"
+msgstr ""
+
+#. module: partner_enhanced
 #: field:res.partner,name_furigana:0
 msgid "Furigana"
 msgstr ""
@@ -92,6 +97,11 @@ msgstr ""
 
 #. module: partner_enhanced
 #: field:res.partner,preferred_order_method:0
+msgid "Preferred Order Method"
+msgstr ""
+
+#. module: partner_enhanced
+#: field:purchase.order,preferred_order_method:0
 msgid "Preferred Order Method"
 msgstr ""
 

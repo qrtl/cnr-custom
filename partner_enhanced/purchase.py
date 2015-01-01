@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) Rooms For (Hong Kong) Limited T/A OSCG (<http://www.openerp-asia.net>).
+#    Copyright (C) Rooms For (Hong Kong) Limited (<http://www.openerp-asia.net>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,25 +19,16 @@
 #
 ##############################################################################
 
-{
-    'name': 'Partner Enhanced',
-    'version': '1.0',
-    'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
-    'website': 'http://www.openerp-asia.net',
-    'category': 'Sales',
-    'sequence': 40,
-    
-    'depends': [
-        'base', 'purchase'
-    ],
-    'description': """
-* Adds fields to partner master
-    """,
-    'data': [
-        'res_partner_view.xml',
-        'purchase_view.xml',
-    ],
-    'installable': True,
-   
-}
+from openerp.tools.translate import _
+from openerp import models, fields, api, _
+
+class purchase_order(models.Model):
+
+    _inherit = "purchase.order"
+
+    free_ship_from = fields.Float(string='Free Shipping From',
+                                  related='partner_id.free_ship_from')
+    preferred_order_method = fields.Selection(string='Preferred Order Method',
+                                         related='partner_id.preferred_order_method')
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
