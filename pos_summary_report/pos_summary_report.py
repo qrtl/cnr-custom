@@ -49,7 +49,7 @@ class pos_summary_report(osv.osv_memory):
     }
     _defaults = {
         'name': 'Daily Shop Sales Report',
-        'date': fields.date.today(),
+        'date': fields.date.context_today,
         'shop': lambda self,cr,uid,c: self.pool.get('res.users').browse(cr, uid, uid, c).pos_config and self.pool.get('res.users').browse(cr, uid, uid, c).pos_config.stock_location_id.id or False,
     }
 
