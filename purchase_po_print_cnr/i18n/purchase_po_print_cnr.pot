@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_po_print_cnr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-08 16:11+0000\n"
+"PO-Revision-Date: 2015-01-08 16:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_po_print_cnr
+#: model:ir.model,name:purchase_po_print_cnr.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Date Req."
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Fax:"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Net Price"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:res.company:purchase_po_print_cnr.view_company_form_z1
+msgid "PO Remarks"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Phone:"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Product ID (Chinriu)"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Product ID and Name (Supplier)"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: field:res.company,po_remark:0
+msgid "Purchase Order Remarks"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Qty"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Shipping address:"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Taxes"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "Unit Price"
+msgstr ""
+
+#. module: purchase_po_print_cnr
+#: view:website:purchase.report_purchaseorder_document
+msgid "VAT:"
+msgstr ""
+
