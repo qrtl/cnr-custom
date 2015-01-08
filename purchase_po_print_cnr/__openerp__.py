@@ -32,7 +32,7 @@
     'depends': ["purchase"], 
     'data': [
         'res_company_view.xml',
-        'views/report_purchaseorder_z1.xml',
+        'views/report_purchaseorder.xml',
     ],
     'installable': True,
     'application': False,
