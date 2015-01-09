@@ -65,9 +65,6 @@
         <record id="product_template_search_view_z1" model="ir.ui.view">
             <field name="name">product.template.search.z1</field>
             <field name="model">product.template</field>
-<!-- 
-            <field name="priority">5</field>
- -->
             <field name="inherit_id" ref="product.product_template_search_view"/>
             <field name="arch" type="xml">
                 <field name="name" position="replace">
@@ -89,7 +86,7 @@
         </record>
 
 
-<!-- Packaging Maintenance -->
+		<!-- Packaging Maintenance -->
         <record id="product_packaging_unit_view" model="ir.ui.view">
             <field name="name">product.packaging.unit.view</field>
             <field name="model">product.packaging.unit</field>
@@ -142,7 +139,7 @@
             parent="product.prod_config_main" sequence="15" />
 
 
-<!-- Allergy -->
+		<!-- Allergy -->
         <record id="product_allergy_view" model="ir.ui.view">
             <field name="name">product.allergy.view</field>
             <field name="model">product.allergy</field>
@@ -246,5 +243,15 @@
             id="menu_prod_designer"
             parent="product.prod_config_main" sequence="20" />
 
+        <record id="product_template_search_view_z1" model="ir.ui.view">
+            <field name="name">product.template.search.z1</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+		    <xpath expr="//field[@name='name']" position="after">
+		        <field name="seller_ids" string="Supplier"/>
+	        </xpath>
+            </field>
+        </record>
     </data>
 </openerp>

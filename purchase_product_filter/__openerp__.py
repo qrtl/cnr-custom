@@ -19,4 +19,22 @@
 #
 ##############################################################################
 
-import product
+{
+    'name': 'Product Filtering in Purchase Order',
+    'version': '1.0',
+    'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
+    'website': 'http://www.openerp-asia.net',
+    'category': 'Purchase',
+    'depends': [
+        "product",
+        "purchase",
+    ],
+    'description': """
+* Filters products by supplier in product search
+    """,
+    'data': [
+        'purchase_view.xml',
+    ],
+    'installable': True,
+}
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
