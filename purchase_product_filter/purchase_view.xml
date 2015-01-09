@@ -8,8 +8,11 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_id']" position="after">
+                    <field name="prod_filter"/>
+                </xpath>
                 <xpath expr="//field[@name='order_line']/tree/field['product_id']" position="replace">
-                    <field name="product_id" on_change="onchange_product_id(parent.pricelist_id,product_id,0,False,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,False,parent.state,context)" context="{'supplier_id': parent.partner_id}"/>
+                    <field name="product_id" on_change="onchange_product_id(parent.pricelist_id,product_id,0,False,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,False,parent.state,context)" context="{'supplier_id': parent.partner_id, 'prod_filter': parent.prod_filter}"/>
                 </xpath>
             </field>
         </record>
@@ -19,7 +22,7 @@
             <field name="inherit_id" ref="purchase.purchase_order_line_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field['product_id']" position="attributes">
-                     <attribute name="context">{'supplier_id': parent.partner_id}</attribute>
+                     <attribute name="context">{'supplier_id': parent.partner_id, 'prod_filter': parent.prod_filter}</attribute>
                 </xpath>
             </field>
         </record>

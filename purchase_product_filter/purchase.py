@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) Rooms For (Hong Kong) Limited T/A OSCG (<http://www.openerp-asia.net>).
+#    Copyright (C) Rooms For (Hong Kong) Limited (<http://www.openerp-asia.net>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,22 +19,14 @@
 #
 ##############################################################################
 
-{
-    'name': 'Product Filtering in Purchase Order',
-    'version': '1.0',
-    'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
-    'website': 'http://www.openerp-asia.net',
-    'category': 'Purchase',
-    'depends': [
-        "product",
-        "purchase",
-    ],
-    'description': """
-* Allows users to choose in purchase order whether product search should apply filtering by supplier 
-    """,
-    'data': [
-        'purchase_view.xml',
-    ],
-    'installable': True,
-}
+from openerp.tools.translate import _
+from openerp import models, fields, api, _
+
+
+class purchase_order(models.Model):
+    _inherit = 'purchase.order'
+    
+    prod_filter = fields.Boolean(string='Filter Products by Supplier', default=True)
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

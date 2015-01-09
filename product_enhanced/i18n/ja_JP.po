@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 07:58+0000\n"
-"PO-Revision-Date: 2014-12-06 07:58+0000\n"
+"POT-Creation-Date: 2015-01-09 16:22+0000\n"
+"PO-Revision-Date: 2015-01-09 16:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -136,7 +136,6 @@ msgstr "容器"
 
 #. module: product_enhanced
 #: view:product.product:product_enhanced.product_search_form_view_z1
-#: view:product.template:product_enhanced.product_template_search_view_z1
 msgid "Product"
 msgstr "製品"
 
@@ -172,7 +171,7 @@ msgstr "製品容器"
 #. module: product_enhanced
 #: model:ir.model,name:product_enhanced.model_product_template
 msgid "Product Template"
-msgstr "製品テンプレート"
+msgstr "Product Template"
 
 #. module: product_enhanced
 #: field:product.allergy,product_ids:0
@@ -210,9 +209,29 @@ msgid "Shipping Width"
 msgstr "発送深さ"
 
 #. module: product_enhanced
+#: model:product.template,ingredients:0
+msgid "Sugar Cane"
+msgstr "Sugar Cane"
+
+#. module: product_enhanced
+#: view:product.template:product_enhanced.product_template_search_view_z1
+msgid "Supplier"
+msgstr "仕入先"
+
+#. module: product_enhanced
 #: sql_constraint:product.allergy:0
 #: sql_constraint:product.designer:0
 #: sql_constraint:product.packaging.unit:0
 msgid "The name must be unique."
 msgstr "同じ名称のレコードは複数登録できません"
+
+#. module: product_enhanced
+#: model:product.template,ingredients:0
+msgid "梅（国産）・塩"
+msgstr "梅（国産）・塩"
+
+#. module: product_enhanced
+#: view:product.template:product_enhanced.product_template_form_view_z1
+msgid "ﾌﾘｶﾞﾅ..."
+msgstr "ﾌﾘｶﾞﾅ..."
 
